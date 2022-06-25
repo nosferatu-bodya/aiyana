@@ -1,0 +1,395 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Work+Sans&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+button {
+    border: none;
+}
+
+button:focus {
+    outline: none;
+}
+
+input {
+    border: none;
+}
+
+input:focus {
+    outline: none;
+}
+
+body {
+    font-family: 'Work Sans', sans-serif;
+}
+
+/* ------------------- NAV -------------- */
+
+nav {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    border-bottom-right-radius: 10px;
+    overflow: hidden;
+}
+
+nav h1 {
+    color: white;
+    padding: 10px;
+    background-color: #1c1a27;
+    user-select: none;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+nav h1:hover {
+    cursor: pointer;
+    background-color: #383741;
+}
+
+nav a {
+    transform: translateX(-100%);
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    background-color: #1c1a27;
+
+    transition: transform .2s;
+}
+
+nav .active {
+    transform: translateX(0);
+}
+
+nav a:hover {
+    background-color: #383741;
+}
+
+
+
+/* --------------------- TITLE ---------------- */
+
+#title {
+    background-image: url("images/title-bg-cropped.jpg");
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    padding: 10% 0;
+    align-items: center;
+    box-shadow: inset 0 -10px 30px #00000082;
+}
+
+.title-text {
+    color: white;
+    width: 50%;
+}
+
+.title-name {
+    font-size: 70px;
+    font-weight: bolder;
+    margin-bottom: 40px;
+    font-family: 'Pacifico', cursive;
+}
+
+.title-desc {
+    font-size: 50px;
+    margin-bottom: 30px;
+    color: #afaebf;
+}
+
+.title-almost {
+    font-size: 20px;
+    color: #7d7c90;
+}
+
+.title-avatar {
+    width: 20%;
+    border-radius: 9999px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.441);
+}
+
+
+
+/* ------------- WHO THE FUCK ------------------- */
+
+#whotf {
+    padding: 7% 15%;
+    position: relative;
+    display: flex;
+    /* align-items: center; */
+    gap: 50px;
+}
+
+.section-title {
+    font-size: 50px;
+    text-align: left;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 10px;
+}
+
+.whotf-hr {
+    width: 30%;
+    margin-bottom: 40px;
+    background-color: #36304342;
+    height: 2px;
+    border-radius: 9999px;
+    border: none;
+}
+
+.section-content {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+}
+
+.whotf-tshirt {
+    width: 40%;
+
+    transition: border-radius .2s, box-shadow .2s, transform .2s;
+}
+
+.whotf-tshirt:hover {
+    border-radius: 40px;
+    box-shadow: 5px 7px 20px rgba(0, 0, 0, 0.649);
+    transform: translate(-2px, -10px);
+}
+
+.section-text {
+    font-size: 20px;
+}
+
+
+/* ------------------ WHY GREAT ----------------------- */
+
+#whygreat {
+    color: white;
+    padding: 7% 15%;
+    background-color: #201b2d;
+}
+
+#whygreat .section-title {
+    text-align: center;
+}
+
+.whygreat-content {
+    display: flex;
+    gap: 40px;
+}
+
+.whygreat-reasons {
+    flex-basis: 0;
+    flex-grow: 1;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.whygreat-reason {
+    background-color: #3e3a4e;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+
+    transition: background-color .2s;
+}
+
+.whygreat-reason:hover {
+    cursor: pointer;
+    background-color: #565267;
+}
+
+.whygreat-reason--active {
+    background-color: white;
+    color: black;
+}
+
+.whygreat-reason--active:hover {
+    background-color: white;
+}
+
+.whygreat-about-container {
+    flex-basis: 0;
+    flex-grow: 1;
+}
+
+.whygreat-about-title {
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.whygreat-about {
+    display: none;
+    line-height: 1.5;
+    font-size: 20px;
+}
+
+.whygreat-about--active {
+    display: inline-block;
+}
+
+
+/* ---------------- DRAWINGS ------------------ */
+
+#drawings {
+    padding: 7% 0 7%;
+}
+
+#drawings .section-title {
+    text-align: center;
+}
+
+.drawings {
+    display: grid;
+    grid-template-columns: repeat(3, calc(60% / 3));
+    grid-template-rows: repeat(2, calc(80vh / 2));
+    justify-content: center;
+    gap: 5px;
+}
+
+.art {
+    background-color: red;
+    position: relative;
+    background-size: cover;
+    overflow: hidden;
+
+    transition: box-shadow .2s;
+}
+
+.art img {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+
+    transition: transform .2s;
+}
+
+.art:hover img{
+    overflow: visible;
+    transform: scale(1.2);
+}
+
+.art:hover {
+    box-shadow: inset 5px -5px 20px black;
+}
+
+.art-by-height img{
+    height: 100%;
+    width: auto;
+}
+
+/* -------------------- PATTERN ---------------- */
+
+#pattern {
+    box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.563);
+    background-image: url("images/aiyana-pattern.png");
+    padding: 12% 0;
+    background-size: 100%;
+}
+
+#pattern .section-title {
+    color: white;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+/* ---------------- BYE ----------------- */
+
+#bye {
+    padding: 7% 0;
+}
+
+#bye .section-title {
+    text-align: center;
+    line-height: 2;
+}
+
+/* ---------------- FOOTER ------------- */
+
+footer {
+    padding: 2% 0;
+    background-color: #201b2d;
+    color: white;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+
+@media (max-width: 1000px) {
+
+    #title {
+        flex-direction: column;
+        box-shadow: none;
+        padding: 30% 0 20%;
+    }
+
+    .title-text {
+        text-align: center;
+        width: 100%;
+    }
+
+    .title-avatar {
+        order: -1;
+        width: 80%;
+    }
+
+
+
+    #whotf {
+        flex-direction: column;
+        align-items: center;
+        padding: 20% 10%;
+    }
+
+    #whotf .whotf-content {
+        order: -1;
+    }
+
+    .whotf-tshirt {
+        width: 90%;
+    }
+
+
+    #whygreat {
+        padding: 20% 10%;
+    }
+
+    .whygreat-content {
+        flex-direction: column;
+    }
+
+
+    #drawings {
+        padding: 20% 0;
+    }
+
+    .drawings {
+        grid-template-columns: repeat(2, calc(100% / 2 - 5px));
+        grid-template-rows: repeat(3, 200px);
+    }
+
+    
+
+    #bye {
+        padding: 20% 10%;
+    }
+
+    #bye .section-title {
+        font-size: 40px;
+        line-height: 1.5;
+    }
+
+
+    footer {
+        padding: 5% 0;
+        font-size: 15px;
+    }
+}
